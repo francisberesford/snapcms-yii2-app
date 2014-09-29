@@ -1,0 +1,55 @@
+{
+	"name": "snapfrozen/snapcms-app",
+	"description": "SnapCMS built on Yii2",
+	"keywords": ["snapcms", "yii2", "cms"],
+	"homepage": "http://www.snapfrozen.com.au/",
+	"type": "project",
+	"license": "MIT",
+	"support": {
+		
+	},
+	"minimum-stability": "dev",
+	"require": {
+		"php": ">=5.4.0",
+		"yiisoft/yii2": "*",
+		"yiisoft/yii2-bootstrap": "*"
+	},
+	"require-dev": {
+		"yiisoft/yii2-codeception": "*",
+		"yiisoft/yii2-debug": "*",
+		"yiisoft/yii2-gii": "*",
+		"codeception/codeception": " 1.8.*@dev",
+		"codeception/specify": " *",
+		"codeception/verify": " *",
+		"yiisoft/yii2-faker": " *",
+		"yiisoft/yii2-apidoc": "*",
+		"mandrill/mandrill": "*"
+	},
+	"suggest": {
+		"codeception/codeception": "Codeception, 1.8.*@dev is currently works well with Yii.",
+		"codeception/specify": "BDD style code blocks for PHPUnit and Codeception",
+		"codeception/verify": "BDD Assertions for PHPUnit and Codeception",
+		"yiisoft/yii2-faker": "Fixtures generator for Yii2 based on Faker lib"
+	},
+	"scripts": {
+		"post-create-project-cmd": [
+			"yii\\composer\\Installer::setPermission"
+		]
+	},
+	"config": {
+		"process-timeout": 30
+	},
+	"extra": {
+		"writable": [
+			"console/runtime",
+			"console/migrations",
+
+			"frontend/runtime",
+			"frontend/web/assets"
+		],
+		"asset-installer-paths": {
+          "npm-asset-library": "vendor/npm",
+          "bower-asset-library": "vendor/bower"
+		}
+	}
+}
