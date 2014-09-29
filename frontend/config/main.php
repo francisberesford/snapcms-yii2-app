@@ -1,6 +1,7 @@
 <?php
+
 return [
-    'id' => 'app-frontend',
+    'id' => 'snapcms-app-frontend',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
@@ -8,8 +9,8 @@ return [
     'extensions' => require(__DIR__ . '/../../vendor/yiisoft/extensions.php'),
     'components' => [
         'request' => [
-            'enableCookieValidation' => false,
-            'enableCsrfValidation' => false,
+            // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
+            'cookieValidationKey' => '',
         ],
         'user' => [
             'identityClass' => 'snapcms\models\User',
