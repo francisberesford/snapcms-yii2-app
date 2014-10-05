@@ -3,7 +3,7 @@
 namespace frontend\tests\acceptance;
 
 use frontend\tests\_pages\SignupPage;
-use frontend\models\User;
+use snapcms\models\User;
 
 class SignupCest
 {

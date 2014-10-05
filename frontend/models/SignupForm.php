@@ -1,7 +1,7 @@
 <?php
 namespace frontend\models;
 
-use frontend\models\User;
+use snapcms\models\User;
 use yii\base\Model;
 use Yii;
 
@@ -22,13 +22,13 @@ class SignupForm extends Model
         return [
             ['username', 'filter', 'filter' => 'trim'],
             ['username', 'required'],
-            ['username', 'unique', 'targetClass' => '\frontend\models\User', 'message' => 'This username has already been taken.'],
+            ['username', 'unique', 'targetClass' => '\snapcms\models\User', 'message' => 'This username has already been taken.'],
             ['username', 'string', 'min' => 2, 'max' => 255],
 
             ['email', 'filter', 'filter' => 'trim'],
             ['email', 'required'],
             ['email', 'email'],
-            ['email', 'unique', 'targetClass' => '\frontend\models\User', 'message' => 'This email address has already been taken.'],
+            ['email', 'unique', 'targetClass' => '\snapcms\models\User', 'message' => 'This email address has already been taken.'],
 
             ['password', 'required'],
             ['password', 'string', 'min' => 6],
@@ -43,7 +43,13 @@ class SignupForm extends Model
     public function signup()
     {
         if ($this->validate()) {
-            return User::create($this->attributes);
+            $user = new User();
+            $user->username = $this->username;
+            $user->email = $this->email;
+            $user->setPassword($this->password);
+            $user->generateAuthKey();
+            $user->save();
+            return $user;
         }
 
         return null;

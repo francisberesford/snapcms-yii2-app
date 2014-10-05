@@ -20,7 +20,7 @@ class SignupFormTest extends DbTestCase
         $model->password = 'some_password';
 
         $user = $model->signup();
-        $this->assertInstanceOf('frontend\models\User', $user);
+        $this->assertInstanceOf('snapcms\models\User', $user);
         expect('username should be correct', $user->username)->equals('some_username');
         expect('email should be correct', $user->email)->equals('some_email@example.com');
         expect('password should be correct', $user->validatePassword('some_password'))->true();

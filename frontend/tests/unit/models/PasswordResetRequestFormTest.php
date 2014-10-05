@@ -6,7 +6,7 @@ use Yii;
 use frontend\tests\unit\DbTestCase;
 use frontend\models\PasswordResetRequestForm;
 use frontend\tests\fixtures\UserFixture;
-use frontend\models\User;
+use snapcms\models\User;
 
 class PasswordResetRequestFormTest extends DbTestCase
 {

@@ -1,7 +1,7 @@
 <?php
 namespace frontend\models;
 
-use frontend\models\User;
+use snapcms\models\User;
 use yii\base\InvalidParamException;
 use yii\base\Model;
 use Yii;
@@ -14,7 +14,7 @@ class ResetPasswordForm extends Model
     public $password;
 
     /**
-     * @var \frontend\models\User
+     * @var \snapcms\models\User
      */
     private $_user;
 

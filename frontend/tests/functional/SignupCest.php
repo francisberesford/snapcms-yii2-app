@@ -3,7 +3,7 @@
 namespace frontend\tests\functional;
 
 use frontend\tests\_pages\SignupPage;
-use frontend\models\User;
+use snapcms\models\User;
 
 class SignupCest
 {
@@ -79,7 +79,7 @@ class SignupCest
         ]);
 
         $I->expectTo('see that user is created');
-        $I->seeRecord('frontend\models\User', [
+        $I->seeRecord('snapcms\models\User', [
             'username'		=>	'tester',
             'email'			=>	'tester.email@example.com',
         ]);
